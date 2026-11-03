@@ -21,7 +21,6 @@ for player in players.itertuples():
     avg_kills = player_matches["kills"].mean()
     avg_deaths = player_matches["deaths"].mean()
     avg_assists = player_matches["assists"].mean()
-    avg_kda = (avg_kills + avg_assists) / (avg_deaths if avg_deaths != 0 else 1)
     avg_game_duration = player_matches["game_duration"].mean() / 60
 
 
@@ -141,11 +140,13 @@ for player in players.itertuples():
         "inactive": player.inactive,
         "freshBlood": player.freshBlood,
         "hotStreak": player.hotStreak,
-        "avg_kda": avg_kda,
         "avg_game_duration": avg_game_duration,
         "avg_time_between_games": avg_time_between_games,
         "avg_time_after_win": avg_time_after_win,
         "avg_time_after_loss": avg_time_after_loss,
+        "avg_kills": avg_kills,
+        "avg_deaths": avg_deaths,
+        "avg_assists": avg_assists,
         "has_premade": has_premade,
         "total_matches": len(player_matches),
         "total_sessions": total_sessions,
