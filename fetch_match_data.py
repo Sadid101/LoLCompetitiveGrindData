@@ -50,6 +50,7 @@ while index < len(match_list):
             matches_data.append({
                 "match_id": selected_match_id,
                 "game_id": game_info["gameId"],
+                "queue_id": game_info["queueId"],
                 "game_creation": game_info["gameCreation"],
                 "game_duration": game_info["gameDuration"],
                 "game_end_timestamp": game_info["gameEndTimestamp"],
